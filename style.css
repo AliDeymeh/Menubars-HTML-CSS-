@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+.warpper {
+    width: 70vw;
+    height: 60px;
+    background-color: #FFF;
+    box-shadow: 0 5px 10px #00000025;
+    border-radius: 50px;
+    line-height: 60px;
+}
+.warpper nav {
+    position: relative;
+    display: flex;
+}
+.warpper nav label {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    cursor: pointer;
+}
+.warpper nav label a {
+    position: relative;
+    z-index: -1;
+    color: #141f20;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+
+}
+.warpper nav label a i {
+    font-size: 22px;
+    margin: 0 7px;
+
+}
+.warpper nav .tab {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg,#05abe0 0%,#8200f4 100%);
+    border-radius: 50px;
+    transition: 0.6s ease-in-out;
+}
+.warpper nav #home:checked ~ label.home a,
+.warpper nav #inbox:checked ~ label.inbox a,
+.warpper nav #contact:checked ~ label.contact a,
+.warpper nav #comment:checked ~ label.comment a,
+.warpper nav #about:checked ~ label.about a {
+    color: #FFF;
+}
+.warpper nav #inbox:checked~.tab {
+    left: 20%;
+    animation: inbox 0.8s ease-in-out;
+}
+@keyframes inbox {
+   0%{
+    left: 5%;
+   }
+   100%{
+       left: 20%;
+   }
+}
+.warpper nav #contact:checked~.tab {
+    left: 40%;
+    animation: contact 0.8s ease-in-out;
+}
+@keyframes contact {
+    0%{
+     left: 25%;
+    }
+    100%{
+        left: 40%;
+    } 
+ }
+.warpper nav #comment:checked~.tab {
+    left: 60%;
+    animation: comment 0.8s ease-in-out;
+
+}
+@keyframes comment {
+    0%{
+     left: 45%;
+    }
+    100%{
+        left: 60%;
+    }
+     
+ }
+.warpper nav #about:checked~.tab {
+    left: 80%;
+    animation: about 0.8s ease-in-out;
+
+}
+@keyframes about {
+    0%{
+     left: 65%;
+    }
+    100%{
+        left: 80%;
+    }     
+ }
+.warpper nav input {
+    display: none;
+}
